@@ -115,7 +115,7 @@ namespace octomap {
 
   bool SaliencyOcTree::isNodeCollapsible(const SaliencyOcTreeNode* node) const{
 
-    // TODO tung: disable prune node now
+    // @tung: Disable prune node now
     return false;
 
     // all children must exist, must not have children of
@@ -138,7 +138,6 @@ namespace octomap {
 
   SaliencyOcTreeNode* SaliencyOcTree::averageNodeSaliency(const OcTreeKey& key,
                                                  uint8_t sal) {
-    // TODO tung: possible derive the average here
     SaliencyOcTreeNode* n = search(key);
     if (n != 0) {
       if (n->isSaliencySet()) {
@@ -177,7 +176,6 @@ namespace octomap {
 
   void SaliencyOcTree::updateInnerOccupancyRecurs(SaliencyOcTreeNode* node, unsigned int depth) {
 
-    //TODO tung check this function updateSaliencyChildren
     // only recurse and update for inner nodes:
     if (nodeHasChildren(node)){
       // return early for last level:
