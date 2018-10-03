@@ -19,7 +19,7 @@ set_target_properties( octomap PROPERTIES
   SOVERSION ${OCTOMAP_SOVERSION}
 )
 ADD_LIBRARY( octomap-static STATIC ${octomap_SRCS})
-SET_TARGET_PROPERTIES(octomap-static PROPERTIES OUTPUT_NAME "octomap") 
+SET_TARGET_PROPERTIES(octomap-static PROPERTIES OUTPUT_NAME "octomap")
 
 TARGET_LINK_LIBRARIES(octomap octomath)
 
@@ -61,9 +61,9 @@ TARGET_LINK_LIBRARIES(intersection_example octomap)
 ADD_EXECUTABLE(octree2pointcloud octree2pointcloud.cpp)
 TARGET_LINK_LIBRARIES(octree2pointcloud octomap)
 
-install(TARGETS 
+install(TARGETS
 	octomap
-	octomap-static 
+	octomap-static
 	graph2tree
 	log2graph
 	binvox2bt
@@ -74,4 +74,3 @@ install(TARGETS
 	compare_octrees
 	${INSTALL_TARGETS_DEFAULT_ARGS}
 )
-
